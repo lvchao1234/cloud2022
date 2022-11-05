@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Service
-@FeignClient(value = "cloud-payment-hystrix-service")
+@FeignClient(value = "cloud-payment-hystrix-service", fallback = PamentFallbackService.class)
 public interface PaymentHystrixService {
 
     @GetMapping("/payment/hystrix/ok/getbyid")
