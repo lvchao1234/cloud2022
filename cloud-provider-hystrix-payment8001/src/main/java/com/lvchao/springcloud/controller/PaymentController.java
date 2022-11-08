@@ -4,6 +4,7 @@ import com.lvchao.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,6 +31,14 @@ public class PaymentController {
     public String paymentInfo_TimeOut(@RequestParam("id") Integer id) {
         String result = service.paymentinfo_Timeout(id);
         log.info("******result:" + result);
+        return result;
+    }
+
+    //=====服务熔断
+    @GetMapping("/payment/circuit/{id}")
+    public String paymentcir(@PathVariable("id") Integer id) {
+        String result = service.paymentCircuitBreaker(id);
+        log.info("+++++++++++++++++++++++++++++result" + result);
         return result;
     }
 
