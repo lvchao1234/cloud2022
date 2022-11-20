@@ -1,0 +1,22 @@
+server:
+  prot: 3344
+
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        gitee:
+          uri: git@gitee.com:lvchao1234/springcloud-config.git #gitee上面的git仓库地址
+          ####搜索目录
+          search-paths:
+            -springcloud-config
+      #读取分支
+      label: master
+
+#服务注册到eureka地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhsot:7001/eureka
