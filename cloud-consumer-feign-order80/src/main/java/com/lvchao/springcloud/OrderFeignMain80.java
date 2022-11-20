@@ -12,6 +12,6 @@ public class OrderFeignMain80 {
 
     public static void main(String[] args) {
         SpringApplication.run(OrderFeignMain80.class,args);
-        log.info("OrderFeignMain80启动了！");
+        log.info("OrderFeignMain80启动了1！");
     }
 }
