@@ -71,4 +71,10 @@ public class OrderController {
         URI uri = serviceInstance.getUri();
         return restTemplate.getForObject(uri+"/findDataById/lb",String.class);
     }
+
+    @GetMapping("/consumer/payment/zipkin")
+    private String paymentZipKin() {
+        String result = restTemplate.getForObject("http://localhost:8001" + "/payment/zipkin/", String.class);
+        return result;
+    }
 }
