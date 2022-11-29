@@ -8,12 +8,13 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @Slf4j
+@EnableFeignClients
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class) //取消数据源的自动创建
 @EnableDiscoveryClient
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-public class SeataStorageServiceMain2002 {
+public class CloudAlibabaOrderServiceMain2001 {
 
     public static void main(String[] args) {
-        SpringApplication.run(SeataStorageServiceMain2002.class, args);
-        log.info("SeataStorageServiceMain2002启动成功了！");
+        SpringApplication.run(CloudAlibabaOrderServiceMain2001.class, args);
+        log.info("CloudAlibabaOrderServiceMain2001启动成功了！");
     }
 }
